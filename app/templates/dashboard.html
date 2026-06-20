@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SentinelPay</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🛡 SentinelPay</h1>
+        <p>Real-Time Fraud Detection</p>
+    </div>
+
+    <div class="card">
+
+        <h2>Score Transaction</h2>
+
+        <form id="fraud-form">
+
+            <input
+                id="amount"
+                type="number"
+                placeholder="Amount"
+                value="150"
+            >
+
+            <input
+                id="country"
+                type="text"
+                placeholder="Country"
+                value="GB"
+            >
+
+            <button type="submit">
+                Analyze
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Fraud Score</h2>
+
+        <div id="score">
+            --
+        </div>
+
+        <div id="decision">
+            Waiting...
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/dashboard.js"></script>
+
+</body>
+</html>

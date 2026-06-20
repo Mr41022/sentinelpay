@@ -1,0 +1,44 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Inter, sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+}
+
+#score {
+    font-size: 60px;
+    font-weight: bold;
+}
