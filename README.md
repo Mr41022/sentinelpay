@@ -1,8 +1,7 @@
 
 ## SentinelPay
-
+Banks lose over $40 billion a year to payment fraud globally. Every bank has fraud detection, but almost all of it is either a rigid rules engine ("flag any transaction over £500 abroad") or a black-box vendor model they can't explain. The gap nobody has filled well is: a transparent, real-time system that explains why it flagged a transaction, adapts to new fraud patterns without retraining, and is observable enough that an ops team can actually trust and debug it.
 A real-time fraud detection API built with **FastAPI**, **SQLAlchemy**, and **async PostgreSQL**.
-
 
 
 ## Quick Start
