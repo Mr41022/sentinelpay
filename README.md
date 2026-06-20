@@ -1,13 +1,9 @@
-Got it — here’s a **clean, professional, copy-paste ready README** that improves your existing one without overcomplicating it.
 
----
-
-````md
-# SentinelPay
+## SentinelPay
 
 A real-time fraud detection API built with **FastAPI**, **SQLAlchemy**, and **async PostgreSQL**.
 
----
+
 
 ## Quick Start
 
