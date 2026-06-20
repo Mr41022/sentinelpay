@@ -50,7 +50,9 @@ API docs available at:
 ```
 http://localhost:8000/docs
 ```
-
+![image](https://github.com/Mr41022/sentinelpay/blob/528d9d59d223986be73db54b50a10acd1f7f3312/Screenshot%202026-06-20%20211111.png)
+![image](https://github.com/Mr41022/sentinelpay/blob/528d9d59d223986be73db54b50a10acd1f7f3312/Screenshot%202026-06-20%20211130.png)
+![image](https://github.com/Mr41022/sentinelpay/blob/528d9d59d223986be73db54b50a10acd1f7f3312/Screenshot%202026-06-20%20211141.png)
 Dashboard UI:
 
 ```
