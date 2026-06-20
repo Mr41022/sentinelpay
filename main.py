@@ -43,4 +43,4 @@ async def dashboard(request: Request):
 # Health check
 @app.get("/health")
 async def health_check():
-    return {"status": "ok", "environment": ENVIRONMENT}
+    return {"status": "ok"}
