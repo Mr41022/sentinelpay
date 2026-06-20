@@ -58,6 +58,8 @@ Dashboard UI:
 ```
 http://localhost:8000/
 ```
+![image](https://github.com/Mr41022/sentinelpay/blob/7bc20e5ae0f1cf455618f3f7fdf7d98553afc592/Screenshot%202026-06-20%20211212.png)
+![image]https://github.com/Mr41022/sentinelpay/blob/7bc20e5ae0f1cf455618f3f7fdf7d98553afc592/Screenshot%202026-06-20%20211229.png)
 
 ---
 
