@@ -1,75 +1,152 @@
+Got it — here’s a **clean, professional, copy-paste ready README** that improves your existing one without overcomplicating it.
+
+---
+
+````md
 # SentinelPay
 
-A real-time fraud detection API built with FastAPI, SQLAlchemy, and async PostgreSQL.
+A real-time fraud detection API built with **FastAPI**, **SQLAlchemy**, and **async PostgreSQL**.
+
+---
 
 ## Quick Start
 
 ### Prerequisites
 - Python 3.12+
 - Docker & Docker Compose
-- uv (universal Python package manager)
+- uv (Python package manager)
 
-### Local Development
+---
 
-1. **Install dependencies:**
-   ```bash
-   uv sync
-   ```
+## Local Development
 
-2. **Start PostgreSQL:**
-   ```bash
-   docker-compose up -d postgres
-   ```
+### 1. Install dependencies
+```bash
+uv sync
+````
 
-3. **Run migrations:**
-   ```bash
-   uv run alembic upgrade head
-   ```
+---
 
-4. **Start the dev server:**
-   ```bash
-   uv run uvicorn app.main:app --reload
-   ```
-
-   API docs: http://localhost:8000/docs
-
-### Running Tests
+### 2. Start PostgreSQL
 
 ```bash
-# All tests
-uv run pytest -v
+docker-compose up -d postgres
+```
 
-# With coverage
+---
+
+### 3. Run database migrations
+
+```bash
+uv run alembic upgrade head
+```
+
+---
+
+### 4. Start development server
+
+```bash
+uv run uvicorn app.main:app --reload
+```
+
+API docs available at:
+
+```
+http://localhost:8000/docs
+```
+
+Dashboard UI:
+
+```
+http://localhost:8000/
+```
+
+---
+
+## Running Tests
+
+### Run all tests
+
+```bash
+uv run pytest -v
+```
+
+### Run with coverage
+
+```bash
 uv run pytest --cov=app --cov-report=term-missing
 ```
+
+---
 
 ## Project Structure
 
 ```
 app/
-├── api/          # HTTP routes & dependencies
-├── domain/       # Pure business logic (fraud scoring)
-├── infrastructure/  # Database & ORM models
-├── schemas/      # Pydantic request/response models
-└── main.py       # FastAPI app entry point
+├── api/               # HTTP routes & dependencies
+├── domain/           # Business logic (fraud scoring)
+├── infrastructure/   # Database models & setup
+├── schemas/          # Pydantic request/response models
+└── main.py           # FastAPI entry point
 
-tests/            # Integration & unit tests
-migrations/       # Alembic database migrations
+tests/                # Unit & integration tests
+migrations/           # Alembic migrations
 ```
+
+---
 
 ## Architecture
 
-- **Domain-Driven**: Business logic isolated in `app/domain/`
-- **Async-First**: FastAPI + SQLAlchemy async for concurrent request handling
-- **Tested**: Comprehensive unit & integration tests with testcontainers
-- **Containerized**: Multi-stage Dockerfile for minimal image size
+* **Domain-driven design**: business logic isolated in `domain/`
+* **Async-first**: FastAPI + async SQLAlchemy for high performance
+* **Tested**: unit + integration tests included
+* **Containerized**: Docker-ready setup for deployment
+
+---
 
 ## Environment Variables
 
-- `DATABASE_URL` - PostgreSQL connection (default: localhost dev DB)
-- `ENVIRONMENT` - `development` or `production` (affects CORS, `/docs` visibility)
-- `LOG_LEVEL` - Python log level (default: INFO)
+| Variable     | Description                  | Default     |
+| ------------ | ---------------------------- | ----------- |
+| DATABASE_URL | PostgreSQL connection string | localhost   |
+| ENVIRONMENT  | development / production     | development |
+| LOG_LEVEL    | Logging level                | INFO        |
+
+---
+
+## API Endpoints
+
+| Method | Endpoint    | Description         |
+| ------ | ----------- | ------------------- |
+| GET    | `/`         | Dashboard UI        |
+| GET    | `/health`   | Health check        |
+| POST   | `/api/v1/*` | Fraud detection API |
+
+---
+
+## Example Response
+
+```json
+{
+  "transaction_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "score": 0.92,
+  "decision": "fraud",
+  "top_reasons": [
+    "high amount",
+    "unusual location"
+  ],
+  "model_version": "v1.0"
+}
+```
+
+---
 
 ## Deployment
 
-Deployed on Railway with automatic Docker builds. See `.github/workflows/ci.yml` for CI pipeline.
+Deployed using Docker with CI/CD pipeline.
+
+See `.github/workflows/ci.yml` for build and deployment workflow.
+
+---
+
+
