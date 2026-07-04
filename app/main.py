@@ -16,28 +16,32 @@ app = FastAPI(
     redoc_url=None,
 )
 
+# CORS
+allow_origins = (
+    ["https://your-frontend-domain.com"]
+    if ENVIRONMENT == "production"
+    else ["http://localhost:3000"]
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-frontend-domain.com"]
-    if ENVIRONMENT == "production"
-    else ["http://localhost:3000", "*"],
+    allow_origins=allow_origins,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
-# Static files
+# Static + templates
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
-
-# Templates
 templates = Jinja2Templates(directory="app/templates")
 
 app.include_router(transactions_router)
 
-# Dashboard route
+
 @app.get("/")
 async def dashboard(request: Request):
     return templates.TemplateResponse(request, "dashboard.html", {"request": request})
 
+
 @app.get("/health")
 async def health_check():
-    return {"status": "ok", "environment": ENVIRONMENT}
+    return {"status": "ok"}  # CI-safe
